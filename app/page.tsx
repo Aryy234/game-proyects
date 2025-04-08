@@ -4,7 +4,7 @@ import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import FeaturedGame from "@/components/featured-game"
 import GameGrid from "@/components/game-grid"
-import GlitchText from "@/components/glitch-text"
+import RetroNeonText from "@/components/retro-neon-text"
 import { games } from "@/lib/data"
 
 export default function HomePage() {
@@ -17,15 +17,15 @@ export default function HomePage() {
 
         <div className="container relative px-4 py-20 mx-auto text-center md:py-32">
           <div className="inline-block px-6 py-2 mb-6 text-xs font-mono tracking-wider border border-cyan-500/30 rounded-full bg-cyan-900/20 text-cyan-400">
-            DESARROLLADOR Y DISEÑADOR DE JUEGOS
+            BY ARYY234
           </div>
 
-          <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">
-            <GlitchText>CYBER_DEV</GlitchText>
+          <h1 className="mb-6">
+            <RetroNeonText text="MINIJUEGOS_RETRO" />
           </h1>
 
           <p className="max-w-2xl mx-auto mb-8 text-lg text-cyan-300/80">
-            Creando experiencias inmersivas de juego con tecnología de vanguardia y estética retro
+            Videojuegos clásicos, con un toque de nostalgia :')
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
@@ -73,7 +73,7 @@ export default function HomePage() {
       <footer className="py-8 mt-16 border-t border-cyan-900/50 bg-black/50">
         <div className="container px-4 mx-auto">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <div className="text-xl font-bold text-cyan-400">CYBER_DEV</div>
+            <div className="text-xl font-bold text-cyan-400">MINIJUEGOS_RETRO</div>
             <div className="flex items-center gap-4">
               <a
                 href="https://github.com"
@@ -97,7 +97,7 @@ export default function HomePage() {
                 <span className="sr-only">Correo</span>
               </a>
             </div>
-            <div className="text-sm text-cyan-600">© {new Date().getFullYear()} CYBER_DEV. Todos los derechos reservados.</div>
+            <div className="text-sm text-cyan-600">© {new Date().getFullYear()} MINIJUEGOS_RETRO. Todos los derechos reservados.</div>
           </div>
         </div>
       </footer>
