@@ -57,7 +57,7 @@ export default function HomePage() {
           <h2 className="mb-2 text-2xl font-bold text-center text-cyan-300 md:text-3xl pixel-text">DESTACADOS</h2>
           <div className="w-20 h-1 mx-auto mb-12 bg-gradient-to-r from-pink-500 to-cyan-500"></div>
 
-          <GameGrid games={games.slice(1)} />
+          <GameGrid games={games.filter(game => game.featured)} />
 
           <div className="mt-12 text-center">
             <Button className="bg-cyan-600 hover:bg-cyan-700 text-white pixel-text-sm">

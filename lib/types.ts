@@ -11,4 +11,5 @@ export interface Game {
   playLink: string
   codeLink?: string
   screenshots?: string[]
+  featured?: boolean
 }
