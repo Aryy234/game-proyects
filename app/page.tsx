@@ -16,7 +16,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-cyan-900/20 to-black/50"></div>
 
         <div className="container relative px-4 py-20 mx-auto text-center md:py-32">
-          <div className="inline-block px-6 py-2 mb-6 text-xs font-mono tracking-wider border border-cyan-500/30 rounded-full bg-cyan-900/20 text-cyan-400">
+          <div className="inline-block px-6 py-2 mb-6 text-xs font-mono tracking-wider border border-cyan-500/30 rounded-full bg-cyan-900/20 text-cyan-400 pixel-text-sm">
             BY ARYY234
           </div>
 
@@ -24,14 +24,14 @@ export default function HomePage() {
             <RetroNeonText text="MINIJUEGOS_RETRO" />
           </h1>
 
-          <p className="max-w-2xl mx-auto mb-8 text-lg text-cyan-300/80">
-            Videojuegos clásicos, con un toque de nostalgia :')
+          <p className="max-w-2xl mx-auto mb-8 text-xl md:text-2xl text-cyan-300/80 pixel-text-sm leading-relaxed">
+            Videojuegos clásicos, con un toque de nostalgia
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
-            <Button className="bg-cyan-600 hover:bg-cyan-700 text-white">
+            <Button className="bg-cyan-600 hover:bg-cyan-700 text-white pixel-text-sm">
               <Link href="/projects" className="flex items-center gap-2">
-                Ver Proyectos <ArrowRight className="w-4 h-4" />
+                Ver Juegos <ArrowRight className="w-4 h-4" />
               </Link>
             </Button>
           </div>
@@ -43,7 +43,7 @@ export default function HomePage() {
       {/*
       <section className="py-16 border-b border-cyan-900/50">
         <div className="container px-4 mx-auto">
-          <h2 className="mb-2 text-2xl font-bold text-center text-cyan-300 md:text-3xl">PROYECTO DESTACADO</h2>
+          <h2 className="mb-2 text-2xl font-bold text-center text-cyan-300 md:text-3xl pixel-text">PROYECTO DESTACADO</h2>
           <div className="w-20 h-1 mx-auto mb-12 bg-gradient-to-r from-pink-500 to-cyan-500"></div>
 
           <FeaturedGame game={games[0]} />
@@ -54,15 +54,15 @@ export default function HomePage() {
       {/* Cuadrícula de Juegos */}
       <section className="py-16">
         <div className="container px-4 mx-auto">
-          <h2 className="mb-2 text-2xl font-bold text-center text-cyan-300 md:text-3xl">MIS PROYECTOS</h2>
+          <h2 className="mb-2 text-2xl font-bold text-center text-cyan-300 md:text-3xl pixel-text">DESTACADOS</h2>
           <div className="w-20 h-1 mx-auto mb-12 bg-gradient-to-r from-pink-500 to-cyan-500"></div>
 
           <GameGrid games={games.slice(1)} />
 
           <div className="mt-12 text-center">
-            <Button className="bg-cyan-600 hover:bg-cyan-700 text-white">
+            <Button className="bg-cyan-600 hover:bg-cyan-700 text-white pixel-text-sm">
               <Link href="/projects" className="flex items-center gap-2">
-                Ver Todos los Proyectos <ArrowRight className="w-4 h-4" />
+                Ver Todos los Juegos <ArrowRight className="w-4 h-4" />
               </Link>
             </Button>
           </div>
@@ -73,31 +73,31 @@ export default function HomePage() {
       <footer className="py-8 mt-16 border-t border-cyan-900/50 bg-black/50">
         <div className="container px-4 mx-auto">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <div className="text-xl font-bold text-cyan-400">MINIJUEGOS_RETRO</div>
+            <div className="text-xl font-bold text-cyan-400 pixel-text">MINIJUEGOS_RETRO</div>
             <div className="flex items-center gap-4">
               <a
                 href="https://github.com"
                 className="p-2 text-cyan-400 transition-colors rounded-full hover:bg-cyan-900/30"
               >
                 <Github className="w-5 h-5" />
-                <span className="sr-only">GitHub</span>
+                <span className="sr-only pixel-text-sm">GitHub</span>
               </a>
               <a
                 href="https://linkedin.com"
                 className="p-2 text-cyan-400 transition-colors rounded-full hover:bg-cyan-900/30"
               >
                 <Linkedin className="w-5 h-5" />
-                <span className="sr-only">LinkedIn</span>
+                <span className="sr-only pixel-text-sm">LinkedIn</span>
               </a>
               <a
                 href="mailto:contact@example.com"
                 className="p-2 text-cyan-400 transition-colors rounded-full hover:bg-cyan-900/30"
               >
                 <Mail className="w-5 h-5" />
-                <span className="sr-only">Correo</span>
+                <span className="sr-only pixel-text-sm">Correo</span>
               </a>
             </div>
-            <div className="text-sm text-cyan-600">© {new Date().getFullYear()} MINIJUEGOS_RETRO. Todos los derechos reservados.</div>
+            <div className="text-sm text-cyan-600 pixel-text-sm">© {new Date().getFullYear()} MINIJUEGOS_RETRO. Todos los derechos reservados.</div>
           </div>
         </div>
       </footer>

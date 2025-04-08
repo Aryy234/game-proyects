@@ -9,8 +9,8 @@ const NeonContainer = styled.div`
   
   i {
     font-style: normal;
-    font-family: 'Nixie One', Helvetica, Arial;
-    font-size: 4rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
     color: #EEDDE0;
     text-shadow: 0 0 30px #EC637B,
                  0 0 10px rgba(230, 161, 173, 0.41),
@@ -18,6 +18,8 @@ const NeonContainer = styled.div`
                  0 0 500px #F36780,
                  5px 9px 5px rgba(0, 0, 0, 0.5);
     transition: all 0.03s ease;
+    letter-spacing: 0.1em;
+    line-height: 1.8;
 
     &.off {
       color: rgba(46, 46, 46, 0.61);
@@ -25,11 +27,11 @@ const NeonContainer = styled.div`
     }
 
     @media (min-width: 768px) {
-      font-size: 6rem;
+      font-size: 3rem;
     }
 
     @media (min-width: 1024px) {
-      font-size: 7rem;
+      font-size: 4rem;
     }
   }
 `
