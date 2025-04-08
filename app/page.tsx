@@ -72,32 +72,46 @@ export default function HomePage() {
       {/* Pie de página */}
       <footer className="py-8 mt-16 border-t border-cyan-900/50 bg-black/50">
         <div className="container px-4 mx-auto">
-          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+          <div className="flex items-center justify-between gap-4">
             <div className="text-xl font-bold text-cyan-400 pixel-text">MINIJUEGOS_RETRO</div>
             <div className="flex items-center gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/Aryy234"
+                target="_blank" 
+                rel="noopener noreferrer"
                 className="p-2 text-cyan-400 transition-colors rounded-full hover:bg-cyan-900/30"
               >
                 <Github className="w-5 h-5" />
                 <span className="sr-only pixel-text-sm">GitHub</span>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/arielelizalde/"
+                target="_blank" 
+                rel="noopener noreferrer"
                 className="p-2 text-cyan-400 transition-colors rounded-full hover:bg-cyan-900/30"
               >
                 <Linkedin className="w-5 h-5" />
                 <span className="sr-only pixel-text-sm">LinkedIn</span>
               </a>
               <a
-                href="mailto:contact@example.com"
+                href="mailto:marcelo-elizalde@hotmail.com"
+                target="_blank" 
+                rel="noopener noreferrer"
                 className="p-2 text-cyan-400 transition-colors rounded-full hover:bg-cyan-900/30"
               >
                 <Mail className="w-5 h-5" />
                 <span className="sr-only pixel-text-sm">Correo</span>
               </a>
+              <a
+                href="https://portfolioariel.vercel.app/"
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-2 text-cyan-400 transition-colors rounded-full hover:bg-cyan-900/30"
+              >
+                <span className="pixel-text-sm">Portfolio</span>
+              </a>
             </div>
-            <div className="text-sm text-cyan-600 pixel-text-sm">© {new Date().getFullYear()} MINIJUEGOS_RETRO. Todos los derechos reservados.</div>
+            <div className="text-sm text-cyan-600 pixel-text-sm">© {new Date().getFullYear()} Ariel Elizalde. Todos los derechos reservados.</div>
           </div>
         </div>
       </footer>
