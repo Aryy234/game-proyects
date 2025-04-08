@@ -1,0 +1,148 @@
+import Image from "next/image"
+import Link from "next/link"
+import { notFound } from "next/navigation"
+import { ArrowLeft, Calendar, Code, ExternalLink, Gamepad2 } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import GlitchText from "@/components/glitch-text"
+import { games } from "@/lib/data"
+
+export default function ProjectPage({ params }: { params: { slug: string } }) {
+  const game = games.find((game) => game.slug === params.slug)
+
+  if (!game) {
+    notFound()
+  }
+
+  return (
+    <div className="min-h-screen bg-black text-cyan-50">
+      {/* Header */}
+      <header className="relative py-16 border-b border-cyan-900/50">
+        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-20"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-cyan-900/20 to-black/50"></div>
+
+        <div className="container relative px-4 mx-auto">
+          <Link href="/projects" className="inline-flex items-center mb-8 text-cyan-400 hover:text-cyan-300">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Projects
+          </Link>
+
+          <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl">
+            <GlitchText>{game.title}</GlitchText>
+          </h1>
+
+          <div className="flex flex-wrap gap-4 mb-8">
+            {game.tags.map((tag) => (
+              <span
+                key={tag}
+                className="px-3 py-1 text-xs font-mono rounded-full bg-cyan-900/30 text-cyan-400 border border-cyan-500/30"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </header>
+
+      {/* Project Details */}
+      <section className="py-16">
+        <div className="container px-4 mx-auto">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="relative overflow-hidden rounded-lg border border-cyan-900/50 aspect-video">
+              <Image
+                src={game.image || "/placeholder.svg"}
+                alt={game.title}
+                fill
+                className="object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+
+            <div className="space-y-6">
+              <p className="text-lg text-cyan-300/80">{game.description}</p>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                <Card className="bg-cyan-900/20 border-cyan-900/50">
+                  <CardContent className="p-4 flex items-center gap-3">
+                    <Calendar className="w-5 h-5 text-cyan-400" />
+                    <div>
+                      <div className="text-xs text-cyan-500">Release Date</div>
+                      <div className="font-medium">{game.releaseDate}</div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-cyan-900/20 border-cyan-900/50">
+                  <CardContent className="p-4 flex items-center gap-3">
+                    <Gamepad2 className="w-5 h-5 text-cyan-400" />
+                    <div>
+                      <div className="text-xs text-cyan-500">Platform</div>
+                      <div className="font-medium">{game.platform}</div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="pt-4 space-y-4">
+                <h2 className="text-xl font-bold text-cyan-300">Technical Details</h2>
+                <p className="text-cyan-300/80">{game.technicalDetails}</p>
+              </div>
+
+              <div className="flex flex-wrap gap-4 pt-6">
+                <Button className="bg-pink-600 hover:bg-pink-700 text-white">
+                  <a href={game.playLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                    Play Now <ExternalLink className="w-4 h-4" />
+                  </a>
+                </Button>
+
+                {game.codeLink && (
+                  <Button variant="outline" className="border-cyan-700 text-cyan-400 hover:bg-cyan-900/30">
+                    <a
+                      href={game.codeLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2"
+                    >
+                      View Code <Code className="w-4 h-4" />
+                    </a>
+                  </Button>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Screenshots */}
+          {game.screenshots && game.screenshots.length > 0 && (
+            <div className="mt-16">
+              <h2 className="mb-2 text-2xl font-bold text-center text-cyan-300">SCREENSHOTS</h2>
+              <div className="w-20 h-1 mx-auto mb-8 bg-gradient-to-r from-pink-500 to-cyan-500"></div>
+
+              <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+                {game.screenshots.map((screenshot, index) => (
+                  <div
+                    key={index}
+                    className="relative overflow-hidden rounded-lg border border-cyan-900/50 aspect-video"
+                  >
+                    <Image
+                      src={screenshot || "/placeholder.svg"}
+                      alt={`${game.title} screenshot ${index + 1}`}
+                      fill
+                      className="object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 mt-16 border-t border-cyan-900/50 bg-black/50">
+        <div className="container px-4 mx-auto text-center text-sm text-cyan-600">
+          © {new Date().getFullYear()} CYBER_DEV. All rights reserved.
+        </div>
+      </footer>
+    </div>
+  )
+}
