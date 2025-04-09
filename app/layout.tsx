@@ -9,9 +9,14 @@ import Footer from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "CYBER_DEV | Game Developer Portfolio",
-  description: "Personal portfolio showcasing cyberpunk-inspired video game projects",
-    generator: 'v0.dev'
+  title: "MINIJUEGOS",
+  description: "Un sitio web para jugar a minijuegos",
+  generator: 'v0.dev',
+  icons: {
+    icon: '/icon-minijuegos.png',
+    shortcut: '/icon-minijuegos.png',
+    apple: '/icon-minijuegos.png'
+  }
 }
 
 export default function RootLayout({
