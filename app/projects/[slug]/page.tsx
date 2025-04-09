@@ -1,7 +1,9 @@
+'use client'
+
 import Image from "next/image"
 import Link from "next/link"
-import { notFound } from "next/navigation"
-import { ArrowLeft, Calendar, Code, ExternalLink, Gamepad2 } from "lucide-react"
+import { notFound, useParams } from "next/navigation"
+import { ArrowLeft, Calendar, Code, ExternalLink, Gamepad2, Github, Linkedin, Mail } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -9,16 +11,12 @@ import GlitchText from "@/components/glitch-text"
 import RetroNeonText from "@/components/retro-neon-text"
 import { games } from "@/lib/data"
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
+export default function ProjectPage() {
+  // Usar el hook useParams
+  const params = useParams();
+  // Asegurarse de que slug es string, aunque useParams puede devolver string | string[]
+  const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;
 
-export default async function ProjectPage({ params }: PageProps) {
-  // Obtener el slug de forma segura
-  const { slug } = params;
-  
   // Buscar el juego en los datos
   const game = games.find((game) => game.slug === slug);
 

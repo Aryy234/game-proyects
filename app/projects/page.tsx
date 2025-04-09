@@ -27,18 +27,8 @@ export default function ProjectsPage() {
         </div>
       </header>
 
-      {/* Proyectos Destacados */}
-      <section className="py-16">
-        <div className="container px-4 mx-auto">
-          <h2 className="mb-2 text-2xl font-bold text-center text-cyan-300 md:text-3xl pixel-text">DESTACADOS</h2>
-          <div className="w-20 h-1 mx-auto mb-12 bg-gradient-to-r from-pink-500 to-cyan-500"></div>
-
-          <GameGrid games={games.filter(game => game.featured)} fullWidth={true} />
-        </div>
-      </section>
-
       {/* Todos los Proyectos */}
-      <section className="py-16 border-t border-cyan-900/50">
+      <section className="py-16">
         <div className="container px-4 mx-auto">
           <h2 className="mb-2 text-2xl font-bold text-center text-cyan-300 md:text-3xl pixel-text">TODOS LOS JUEGOS</h2>
           <div className="w-20 h-1 mx-auto mb-12 bg-gradient-to-r from-pink-500 to-cyan-500"></div>
