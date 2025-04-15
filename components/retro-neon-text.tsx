@@ -6,11 +6,13 @@ import styled from 'styled-components'
 const NeonContainer = styled.div`
   display: inline-block;
   text-align: center;
+  width: 100%;
+  overflow-x: visible;
   
   i {
     font-style: normal;
     font-family: 'Press Start 2P', cursive;
-    font-size: 2rem;
+    font-size: 1.25rem; /* Tamaño más pequeño en móviles */
     color: #EEDDE0;
     text-shadow: 0 0 30px #EC637B,
                  0 0 10px rgba(230, 161, 173, 0.41),
@@ -24,6 +26,10 @@ const NeonContainer = styled.div`
     &.off {
       color: rgba(46, 46, 46, 0.61);
       text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (min-width: 480px) {
+      font-size: 1.75rem; /* Tamaño intermedio para pantallas pequeñas */
     }
 
     @media (min-width: 768px) {
@@ -99,4 +105,4 @@ export default function RetroNeonText({ text }: RetroNeonTextProps) {
   return (
     <NeonContainer ref={containerRef} />
   );
-} 
+}

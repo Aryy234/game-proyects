@@ -20,7 +20,7 @@ export default function HomePage() {
             BY ARYY234
           </div>
 
-          <h1 className="mb-6">
+          <h1 className="mb-6 w-full px-2 overflow-visible">
             <RetroNeonText text="MINIJUEGOS_RETRO" />
           </h1>
 
